@@ -39,10 +39,8 @@ function App() {
             .then(res => {
               console.log("🚀 ~ handleFormSubmit ~ res.data.products:", res.data.products)
               setProductList(res.data.products)
-
               setIsLogin(true)
             })
-
             .catch(err => console.log(err))
 
 
@@ -56,7 +54,7 @@ function App() {
   const checkUserLogin = () => {
     axios.post(`${base_URL}/v2/api/user/check`)
       .then(res=>alert("已登入"))
-      .then(err=>console.log("失敗"))
+      .catch(err=>console.log("失敗"))
   }
 
   return (
